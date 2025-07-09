@@ -1,10 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site de Casamento Completo com Supabase</title>
+    <title>Marcia & Michel - Nosso Casamento</title>
+    <meta name="description" content="Bem-vindo ao site oficial do casamento de Marcia & Michel! Confirme sua presença, veja a lista de presentes, deixe seu recado e celebre conosco esse momento inesquecível." />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marcia & Michel - Nosso Casamento" />
+    <meta property="og:description" content="Junte-se a nós para celebrar o amor! Encontre informações do evento, confirme presença, veja a lista de presentes e deixe sua mensagem especial para os noivos." />
+    <meta property="og:url" content="https://marciaemichel.vercel.app" />
+    <meta property="og:image" content="/banner-default.jpg" id="og-image-tag" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marcia & Michel - Nosso Casamento" />
+    <meta name="twitter:description" content="Junte-se a nós para celebrar o amor! Encontre informações do evento, confirme presença, veja a lista de presentes e deixe sua mensagem especial para os noivos." />
+    <meta name="twitter:image" content="/banner-default.jpg" id="twitter-image-tag" />
+
+    <!-- Script para atualizar og:image dinamicamente com o banner salvo -->
+    <script>
+      // Tenta pegar o banner salvo no localStorage (caso já tenha sido carregado no front)
+      try {
+        const config = JSON.parse(localStorage.getItem('site_config') || '{}');
+        const banner = config.banner_principal;
+        if (banner) {
+          var og = document.getElementById('og-image-tag');
+          var tw = document.getElementById('twitter-image-tag');
+          if (og) og.setAttribute('content', banner);
+          if (tw) tw.setAttribute('content', banner);
+        }
+      } catch(e) {}
+    </script>
     <script type="module" crossorigin src="/assets/index-BSA1NOWJ.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D5eKhwQo.css">
   </head>
